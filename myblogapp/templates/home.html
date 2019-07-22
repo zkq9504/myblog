@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="../static/css/home.css">
+	<title>Welcome come to Myblog</title>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<h1>Welcome To My Blog</h1>
+	</div>
+	<div id="nav">
+        <div id="nav-blogger">周凯强的博客</div>
+		<div id="nav-list">
+			<a href="/home/">首页</a>
+			<a href="/skill/">技术杂谈</a>
+			<a href="/life/">生活记录</a>
+			<a href="/food/">美食</a>
+			<a href="/message/">留言板</a>
+		</div>
+	</div>
+	<div id="aside">
+		<div id="new-things">
+			<div class="aside-box">
+				<h4>新鲜事</h4>
+			</div>
+		</div>
+		<div id="recent-message">
+			<div class="aside-box">
+				<h4>最近留言</h4>
+                {% for msg in msgs %}
+                    {% if forloop.counter < 3 %}
+                        <div class="aside-text-box">
+                            <div class="aside-text">
+                                <p>&nbsp&nbsp{{msg.message}}</p>
+                            </div>
+                            <div class="aside-msg-time">
+                                {{ msg.time|date:"Y-m-d H:i:s" }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		<div id="home-page">
+			<div id="cube-box">
+				<div id="cube">
+					<div class="top box-page"></div>
+					<div class="bottom box-page"></div>
+					<div class="left box-page"></div>
+					<div class="right box-page"></div>
+					<div class="front box-page"></div>
+					<div class="back box-page"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div id="footer">
+        <p>我也是有底线的</p>
+    </div>
+</div>
+<script type="text/javascript">
+	var magicCube = function () {
+        var arr = document.querySelectorAll("#cube>div");
+        for(var n = 0;n<arr.length;n++){
+            for(var i=0;i<3;i++){
+                for(var j=0;j<3;j++){
+                    var divs = document.createElement("div");
+                    divs.style.cssText = "width:100px;height:100px;border: 1px solid " +
+                        "#fff;position:absolute;box-sizing:border-box;background-image:" +
+                        "url(../static/images/a"+n+".jpg);background-size: 300px 300px;";
+                    arr[n].appendChild(divs);
+
+                    // 改变每一个div的位置
+                    divs.style.left = 100*j+"px";
+                    divs.style.top = 100*i+"px";
+
+                    // 改变背景图相应的位置
+                    divs.style.backgroundPositionX = -j*100+"px";
+                    divs.style.backgroundPositionY = -i*100+"px";
+                }
+            }
+        }
+    }
+    magicCube()
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="../static/css/home.css">
+	<title>Welcome come to Myblog</title>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<h1>Welcome To My Blog</h1>
+	</div>
+	<div id="nav">
+        <div id="nav-blogger">周凯强的博客</div>
+		<div id="nav-list">
+			<a href="/home/">首页</a>
+			<a href="/skill/">技术杂谈</a>
+			<a href="/life/">生活记录</a>
+			<a href="/food/">美食</a>
+			<a href="/message/">留言板</a>
+		</div>
+	</div>
+	<div id="aside">
+		<div id="new-things">
+			<div class="aside-box">
+				<h4>新鲜事</h4>
+                <div class="aside-text-box"></div>
+                <div class="aside-text-box"></div>
+			</div>
+		</div>
+		<div id="recent-message">
+			<div class="aside-box">
+				<h4>最近留言</h4>
+                {% for msg in msgs %}
+                    {% if forloop.counter < 3 %}
+                        <div class="aside-text-box">
+                            <div class="aside-text">
+                                <p>&nbsp&nbsp{{msg.message}}</p>
+                            </div>
+                            <div class="aside-msg-time">
+                                {{ msg.time|date:"Y-m-d H:i:s" }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		<div id="message">
+            <div id="msg-board">
+                <div id="msg-header">
+                    <span>留言墙</span>
+                </div>
+                <div id="new-msg-box">
+                    <form id="msgform"action="/message/" method="POST">
+                        {% csrf_token %}
+                        <textarea id="new-msg-area" wrap="physical" name="newmsg" placeholder="说点什么吧..." maxlength="100"></textarea><br />
+                        <input type="button" id="submit-msg" onclick="checkText()" value="提 交">
+                    </form>
+                </div>
+                <div id="msg-box">
+                    {% for msg in msgs %}
+                        <div class="msg-text-box">
+                            <div class="msg-text"><p>&nbsp{{ msg.message }}</p></div>
+                            <div class="msg-time"><p>{{ msg.time|date:"Y-m-d H:i:s" }}</p></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+	</div>
+    <div id="footer">
+        <p>我也是有底线的</p>
+    </div>
+</div>
+<script type="text/javascript">
+    function checkText() {
+        var msgform = document.getElementById("msgform")
+        var textarea = document.getElementById("new-msg-area")
+        if (textarea.value == ""){
+            alert("留言为空，请留言后再提交")
+        }
+        else{
+            msgform.submit()
+            alert("留言成功")
+        }
+    }
+</script>
+</body>
+</html>

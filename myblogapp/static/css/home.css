@@ -1,0 +1,326 @@
+	*{
+		margin:0;
+		padding:0;
+	}
+	
+	body{
+		font-size:16px;
+		background-color:white;
+	}
+	
+	#container{
+		position:relative;
+		width:1200px;
+		margin:0 auto;
+	}
+	
+	#header{
+		height:300px;
+		line-height:300px;
+		background-color:#696969;
+		color:white;
+		text-align:center;
+	}
+	
+	#nav{
+		height:60px;
+		margin:10px auto;
+		background-color:#696969;
+		color:white;
+	}
+	#nav-blogger{
+		width:200px;
+		line-height:60px;
+		letter-spacing:5px;
+		font-family: 楷体;
+		font-size:20px;
+		float:left;
+		margin:0 0 0 80px;
+	}
+	#nav-list{
+		height:60px;
+		line-height:60px;
+		letter-spacing:8px;
+		float:right;
+		margin:0px 220px;
+	}
+	
+	#nav a{
+		font-size:18px;
+		text-decoration:none;
+	}
+	
+	a:link{
+		color:white;
+	}
+	a:visited{
+		color:white;
+	}
+	a:hover{
+		color:yellow;
+	}
+	a:active{
+		color:yellow;
+	}
+	
+	#aside{
+		width:300px;
+		height:1000px;
+		color:white;
+		text-align:center;
+		float:left;
+	}
+	
+	#new-things{
+		height:500px;
+		background-color:#9FB6CD;
+		margin:0 5px;
+	}
+	
+	#recent-message{
+		height:500px;
+		background-color:#9FB6CD;
+		margin:10px 5px;
+	}
+	
+	.aside-box{
+		position:relative;
+		top:20px;
+		width:290px;
+		height:480px;
+	}
+	.aside-text-box{
+		font-size:16px;
+		color:white;
+		width:240px;
+		height:200px;
+		border:1px solid lightsteelblue;
+		margin:15px auto;
+	}
+	.aside-text{
+		font-family:楷体;
+		text-align:justify;
+		width:220px;
+		height:165px;
+		margin:5px auto;
+		letter-spacing:3px;
+	}
+	.aside-msg-time{
+		font-size:12px;
+		width:150px;
+		height:20px;
+		position:relative;
+		top:0px;
+		left:100px;
+	}
+	
+	#content{
+		width:895px;
+		margin-left:5px;
+		float:right;
+	}
+	
+	#home-page{
+		width:890px;
+		height:1010px;
+		background-color:#CCCCCC;
+	}
+	#cube-box{
+		width:300px;
+		height:300px;
+		perspective:20000px;
+	}
+	#cube{
+		width:300px;
+		height:300px;
+		border:1px solid transparent;
+		box-sizing:border-box;
+		position:relative;
+		top:300px;
+		left:300px;
+		transform-style:preserve-3d;
+		animation:rotate 10s linear infinite;
+	}
+	@keyframes rotate{
+		100%{
+			transform:rotatex(360deg) rotatey(360deg) rotatez(360deg);
+		}
+	}
+	
+	.box-page{
+		width:300px;
+		height:300px;
+		position:absolute;
+		box-sizing:border-box;
+		transform-style:preserve-3d;
+	}
+	
+	.top{
+		transform:translateZ(150px);
+	}
+	.bottom{
+		transform:translateZ(-150px) rotateX(180deg);
+	}
+	.left{
+		transform:translateX(-150px) rotateY(-90deg);
+	}
+	.right{
+		transform:translateX(150px) rotateY(90deg);
+	}
+	.front{
+		transform:translateY(150px) rotateX(-90deg);
+	}
+	.back{
+		transform:translateY(-150px) rotateX(90deg);
+	}
+	
+	.box-page div:first-child,.box-page div:nth-child(3),.box-page div:nth-child(5),.box-page div:nth-child(7),.box-page div:nth-child(9){
+			transform: rotateY(0deg);
+		    animation: rotatey 6s linear infinite;
+		}
+
+		@keyframes rotatey{
+			20%{
+				transform: rotateY(0deg);
+				background-size: 300px 300px;
+			}
+			40%{
+				transform: rotateY(540deg);
+				background-size: 100px 100px;
+			}
+			60%{
+				transform: rotateY(540deg);
+				background-size: 100px 100px;
+			}
+			80%{
+				transform: rotateY(0deg);
+				background-size:300px 300px;
+			}
+		}
+
+		.box-page div:nth-child(2),.box-page div:nth-child(4),.box-page div:nth-child(6),.box-page div:nth-child(8){
+			transform:rotateX(0deg);
+		    animation: rotatex 6s linear infinite;
+		}
+
+		@keyframes rotatex{
+			20%{
+				transform: rotateX(0deg);
+				background-size: 300px 300px;
+			}
+			40%{
+				transform: rotateX(540deg);
+				background-size: 100px 100px;
+			}
+			60%{
+				transform: rotateX(540deg);
+				background-size: 100px 100px;
+			}
+			80%{
+				transform: rotateX(0deg);
+				background-size: 300px 300px;
+			}
+		}
+	
+	#skill{
+		width:890px;
+		height:1010px;
+		background-color:#ADD8E6;
+	}
+	
+	#life{
+		width:890px;
+		height:1010px;
+		background-color:#FFFFE0;
+	}
+	
+	#food{
+		width:890px;
+		height:1010px;
+		background-color:#FFE4B5;
+	}
+	
+	#message{
+		width:890px;
+		height:1010px;
+		background-color:#C1CDC1;
+	}
+	#msg-board{
+		width:600px;
+		height:800px;
+		font-family:楷体;
+		background-color:whitesmoke;
+		color:black;
+		position:relative;
+		top:100px;
+		left:145px;
+		text-align:center;
+		border:1px solid gray;
+	}
+	#msg-header{
+		height:80px;
+		line-height:80px;
+		font-size:25px;
+		letter-spacing: 8px;
+	}
+	#new-msg-box{
+		width:540px;
+		height:150px;
+		margin:20px auto;
+		font-size:20px;
+	}
+	#new-msg-area{
+		width:540px;
+		height:130px;
+		text-align:left;
+	}
+	#submit-msg{
+		width:50px;
+		height:20px;
+		text-align: center;
+		position:relative;
+		bottom:20px;
+		left:220px;
+	}
+	#submit-msg:hover{
+		background-color:lightblue;
+	}
+	#msg-box{
+		width:540px;
+		height:530px;
+		margin:20px auto;
+		font-family:楷体;
+	}
+	.msg-text-box{
+		width:500px;
+		height:90px;
+		margin:10px auto;
+		border:1px solid gainsboro;
+	}
+	.msg-text{
+		text-align:left;
+		height:70px;
+	}
+	.msg-time{
+		font-size:14px;
+		text-align:right;
+		width:150px;
+		height:20px;
+		float:right;
+		margin: 0 5px;
+	}
+
+	#footer{
+		width:1200px;
+		height:60px;
+		line-height:60px;
+		color:white;
+		font-size:14px;
+		text-align:center;
+		background-color:#696969;
+		margin:10px auto;
+		position:absolute;
+		top:1390px;
+		left:0px;
+	}
+
