@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ea90bbb-57e3-424e-8488-ba4b85057699" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/myblogapp/templates/food.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblogapp/templates/food.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblogapp/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblogapp/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblogapp/templates/life.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblogapp/templates/life.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblogapp/templates/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblogapp/templates/message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblogapp/templates/skill.html" beforeDir="false" afterPath="$PROJECT_DIR$/myblogapp/templates/skill.html" afterDir="false" />
-    </list>
+    <list default="true" id="5ea90bbb-57e3-424e-8488-ba4b85057699" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,19 +10,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myblogapp/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-688">
+            <state relative-caret-position="-1588">
               <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myblogapp/static/css/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="-2310">
               <caret line="196" column="44" lean-forward="true" selection-start-line="196" selection-start-column="44" selection-end-line="196" selection-end-column="44" />
             </state>
           </provider>
@@ -127,7 +121,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -258,15 +252,16 @@
       <workItem from="1563685635275" duration="14949000" />
       <workItem from="1563779399904" duration="64000" />
       <workItem from="1563788753168" duration="8368000" />
-      <workItem from="1563811524351" duration="1616000" />
+      <workItem from="1563811524351" duration="2234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55852000" />
+    <option name="totallyTimeSpent" value="56470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.12313433" />
@@ -443,17 +438,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myblogapp/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/myblogapp/static/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-688">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="-2310">
+          <caret line="196" column="44" lean-forward="true" selection-start-line="196" selection-start-column="44" selection-end-line="196" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myblogapp/static/css/home.css">
+    <entry file="file://$PROJECT_DIR$/myblogapp/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="196" column="44" lean-forward="true" selection-start-line="196" selection-start-column="44" selection-end-line="196" selection-end-column="44" />
+        <state relative-caret-position="-1588">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
         </state>
       </provider>
     </entry>
