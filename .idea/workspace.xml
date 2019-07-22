@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ea90bbb-57e3-424e-8488-ba4b85057699" name="Default Changelist" comment="" />
+    <list default="true" id="5ea90bbb-57e3-424e-8488-ba4b85057699" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/a1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a2.jpg" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
