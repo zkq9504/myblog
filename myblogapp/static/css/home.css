@@ -263,10 +263,12 @@
 		text-align:justify;
 	}
 	.article-list-time{
+		font-size:14px;
 		width:150px;
 		float:right;
 		position:relative;
 		top:5px;
+		border:1px solid red;
 	}
 	.page-box{
 		width:800px;

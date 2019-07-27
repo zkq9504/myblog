@@ -9,5 +9,10 @@ urlpatterns = [
     path('life/',views.life),
     path('food/',views.food),
     path('msgboard/',views.msgboard),
-    path('skill/py001.html/',views.skillArticle),
+    path('skill/python/',views.skillPython),
+    path('skill/django/',views.skillDjango),
+    path('skill/vue/', views.skillVue),
+    path('skill/html/',views.skillHtml),
+    path('skill/css/',views.skillCss),
+    path('skill/js/',views.skillJs),
 ]
