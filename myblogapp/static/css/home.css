@@ -2,19 +2,29 @@
 		margin:0;
 		padding:0;
 	}
-	
+	html{
+		height:100%;
+		position:relative;
+	}
 	body{
+		height:100%;
 		font-size:16px;
 		background-color:white;
+	}
+	a{
+		text-decoration:none;
+		color:white;
 	}
 	
 	#container{
 		position:relative;
+		height:100%;
 		width:1200px;
 		margin:0 auto;
 	}
 	
 	#header{
+		width:100%;
 		height:300px;
 		line-height:300px;
 		background-color:#696969;
@@ -41,42 +51,137 @@
 		height:60px;
 		line-height:60px;
 		letter-spacing:8px;
-		float:right;
-		margin:0px 220px;
 	}
-	
 	#nav a{
 		font-size:18px;
-		text-decoration:none;
 	}
-	
-	a:link{
-		color:white;
-	}
-	a:visited{
-		color:white;
-	}
-	a:hover{
+	#nav a:hover{
 		color:yellow;
 	}
-	a:active{
-		color:yellow;
+	.group-box{
+		text-align:center;
+		width:110px;
+		position:absolute;
+		top:310px;
+		z-index:5;
+	}
+	#home-link{
+		left:410px;
+	}
+	#skill-group-box{
+		left:515px;
+	}
+	#life-group-box{
+		left:650px;
+	}
+	#food-group-box{
+		left:760px;
+	}
+	#msgboard-link{
+		left:855px;
+	}
+	#skill-group-box:hover #skill-list{
+		display: block;
+	}
+	#life-group-box:hover #life-list{
+		display: block;
+	}
+	#food-group-box:hover #food-list{
+		display: block;
+	}
+	.sort-list{
+		font-family:楷体;
+		line-height:30px;
+		letter-spacing:2px;
+		z-index:2;
+		background-color:#ADD8E6;
+	}
+	.sort-list ul{
+		list-style-type:none;
+	}
+
+	#skill-list{
+		display:none;
+	}
+	#life-list{
+		display:none;
+	}
+	#food-list{
+		display:none;
 	}
 	
 	#aside{
 		width:300px;
-		height:1000px;
 		color:white;
 		text-align:center;
 		float:left;
+
 	}
-	
+	#search-box{
+		height:40px;
+		background-color:#9FB6CD;
+		margin:0 5px 5px 5px;
+	}
+	#search-bar{
+		height:25px;
+		width:230px;
+		margin:5px auto;
+	}
+	#search-button{
+		width:45px;
+		height:25px;
+		line-height:22px;
+		background-color:white;
+	}
 	#new-things{
-		height:500px;
+		height:630px;
 		background-color:#9FB6CD;
 		margin:0 5px;
 	}
-	
+	#new-things a:hover{
+		text-decoration:underline;
+		font-size:105%;
+	}
+	.aside-fresh-title{
+		text-align:center;
+		position:relative;
+		top:15px;
+	}
+	.aside-fresh-box{
+		font-family:楷体;
+		position:relative;
+		top:20px;
+		width:240px;
+		height:100px;
+		text-align:justify;
+		border:1px solid lightsteelblue;
+		margin:10px auto 0 auto;
+	}
+	.aside-article-type{
+		position:relative;
+		width:100px;
+		height:20px;
+		line-height:20px;
+		top:5px;
+		left:5px;
+		background-color:lightsteelblue;
+	}
+	.aside-article-title{
+		position:relative;
+		width:230px;
+		height:45px;
+		line-height:22px;
+		top:10px;
+		left:5px;
+	}
+	.aside-article-time{
+		font-size:12px;
+		position:relative;
+		top:20px;
+		height:20px;
+		float:right;
+		margin-right:5px;
+	}
 	#recent-message{
 		height:500px;
 		background-color:#9FB6CD;
@@ -113,14 +218,84 @@
 		top:0px;
 		left:100px;
 	}
+	#ad-position{
+		background-color:#9FB6CD;
+		margin:10px 5px;
+		font-size:150px;
+		font-weight:bolder;
+		text-align:center;
+		color:black;
+
+	}
 	
 	#content{
 		width:895px;
 		margin-left:5px;
 		float:right;
 	}
-	
-	#home-page{
+	.article-list-box{
+		position:relative;
+		top:20px;
+		width:750px;
+		height:160px;
+		color:black;
+		padding:20px 15px;
+		margin:0 auto 10px;
+	}
+	.article-list-box a{
+		text-decoration: none;
+		color:black;
+		font-weight: bold;
+	}
+	.article-list-box a:hover{
+		text-decoration:underline;
+		font-size:103%;
+	}
+	.article-list-type a{
+		font-weight: initial;
+		background-color:#87CEFA;
+	}
+	.article-list-abstract{
+		position:relative;
+		top:10px;
+		height:100px;
+		margin:10px 10px;
+		text-align:justify;
+	}
+	.article-list-time{
+		width:150px;
+		float:right;
+		position:relative;
+		top:5px;
+	}
+	.page-box{
+		width:800px;
+		height:40px;
+		font-size:14px;
+		line-height:40px;
+		text-align:center;
+		letter-spacing:2px;
+		margin:50px auto;
+	}
+	.page-button{
+		color:black;
+		padding:2px;
+		background-color:gainsboro;
+		border:1px solid black;
+	}
+	.num-page{
+		padding-left:7px;
+		padding-right:7px;
+	}
+	.page-button:hover{
+		color:firebrick;
+	}
+	.page-button:focus{
+		font-size:90%;
+		background-color:#9FB6CD;
+	}
+
+	#home{
 		width:890px;
 		height:1010px;
 		background-color:#CCCCCC;
@@ -224,10 +399,10 @@
 	
 	#skill{
 		width:890px;
-		height:1010px;
+		height:1185px;
 		background-color:#ADD8E6;
 	}
-	
+
 	#life{
 		width:890px;
 		height:1010px;
@@ -318,9 +493,8 @@
 		font-size:14px;
 		text-align:center;
 		background-color:#696969;
-		margin:10px auto;
-		position:absolute;
-		top:1390px;
-		left:0px;
+		position:relative;
+		clear:both;
+		margin:10px auto 0px auto;
 	}
 

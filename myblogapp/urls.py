@@ -8,5 +8,6 @@ urlpatterns = [
     path('skill/',views.skill),
     path('life/',views.life),
     path('food/',views.food),
-    path('message/',views.message),
+    path('msgboard/',views.msgboard),
+    path('skill/py001.html/',views.skillArticle),
 ]

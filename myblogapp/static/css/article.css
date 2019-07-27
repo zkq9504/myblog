@@ -1,0 +1,111 @@
+    #article-area{
+        width:895px;
+        background:gainsboro;
+        text-align:center;
+    }
+    .article-title{
+        width:750px;
+        height:30px;
+        line-height:30px;
+        font-size:18px;
+        font-weight:bold;
+        margin:0 auto;
+        position: relative;
+        top:20px;
+    }
+    .article-msg{
+        width:750px;
+        height:20px;
+        margin:0 auto;
+        position:relative;
+        font-size:14px;
+        top:20px;
+    }
+    .article-sort{
+        margin:0 5px;
+    }
+    .article-time{
+        margin:0 5px;
+    }
+    .article-abstract{
+        width:750px;
+        height:120px;
+        margin:40px auto 10px;
+        letter-spacing:1px;
+        text-align:justify;
+    }
+    .article-abstract-text p{
+        text-indent:2em;
+    }
+    .article-content{
+        width:750px;
+        letter-spacing:1px;
+        text-align:justify;
+        margin:0 auto;
+    }
+    .article-content p{
+        text-indent:2em;
+        margin:0px auto 10px;
+    }
+    #comment-area{
+        width:895px;
+        margin:10px auto;
+        position:relative;
+        background-color:ghostwhite;
+        text-align:center;
+        font-size:18px;
+    }
+    #comment-area span{
+        letter-spacing:3px;
+    }
+    #new-comment-area{
+        width:700px;
+        height:100px;
+        margin:10px auto;
+        color:black;
+    }
+    #new-comment-area{
+         font-size:16px;
+        letter-spacing:2px;
+        text-align:justify;
+    }
+    #submit-comment{
+        width:100px;
+		height:30px;
+		text-align:center;
+        letter-spacing:2px;
+        font-size:16px;
+		position:relative;
+		bottom:10px;
+		left:280px;
+    }
+    #pre-comments{
+        width:700px;
+        margin:auto;
+        font-family:楷体;
+    }
+    .comment-text-box{
+        width:700px;
+        height:100px;
+        border:1px solid gainsboro;
+        margin:15px auto;
+    }
+    .comment-text{
+        width:680px;
+        height:70px;
+        margin:5px auto;
+        letter-spacing:2px;
+        text-align:justify;
+    }
+    .comment-time{
+        font-size:14px;
+		width:150px;
+		height:20px;
+		float:right;
+    }
+    #comment-page{
+        width:600px;
+        height:80px;
+        margin:20px auto 0;
+        border:1px solid black;
+    }

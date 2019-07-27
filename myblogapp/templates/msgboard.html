@@ -17,7 +17,7 @@
 			<a href="/skill/">技术杂谈</a>
 			<a href="/life/">生活记录</a>
 			<a href="/food/">美食</a>
-			<a href="/message/">留言板</a>
+			<a href="/msgboard/">留言板</a>
 		</div>
 	</div>
 	<div id="aside">
@@ -53,7 +53,7 @@
                     <span>留言墙</span>
                 </div>
                 <div id="new-msg-box">
-                    <form id="msgform"action="/message/" method="POST">
+                    <form id="msgform"action="/msgboard/" method="POST">
                         {% csrf_token %}
                         <textarea id="new-msg-area" wrap="physical" name="newmsg" placeholder="说点什么吧..." maxlength="100"></textarea><br />
                         <input type="button" id="submit-msg" onclick="checkText()" value="提 交">

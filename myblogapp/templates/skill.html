@@ -2,8 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <title>周凯强的个人博客</title>
 	<link rel="stylesheet" href="../static/css/home.css">
-	<title>周凯强的个人博客</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
 <div id="container">
@@ -13,22 +14,81 @@
 	<div id="nav">
         <div id="nav-blogger">周凯强的博客</div>
 		<div id="nav-list">
-			<a href="/home/">首页</a>
-			<a href="/skill/">技术杂谈</a>
-			<a href="/life/">生活记录</a>
-			<a href="/food/">美食</a>
-			<a href="/message/">留言板</a>
+			<a id="home-link" class="group-box" href="/home/" >首页</a>
+            <div id="skill-group-box" class="group-box">
+                <a id="skill-link" href="/skill/">技术杂谈</a>
+                <div id="skill-list" class="sort-list">
+                    <ul>
+                        <li><a href="">Python</a></li>
+                        <li><a href="">Django</a></li>
+                        <li><a href="">Vue</a></li>
+                        <li><a href="">Html</a></li>
+                        <li><a href="">CSS</a></li>
+                        <li><a href="">JavaScript</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="life-group-box" class="group-box">
+                <a id="life-link" href="/life/">生活记录</a>
+                <div id="life-list" class="sort-list">
+                    <ul>
+                        <li><a href="">个人随笔</a></li>
+                        <li><a href="">随手拍</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="food-group-box" class="group-box">
+               <a id="food-link" href="/food/" onmousemove="showFoodSort()">美食</a>
+                <div id="food-list" class="sort-list">
+                    <ul>
+                        <li><a href="">美食教程</a></li>
+                        <li><a href="">美食分享</a></li>
+                    </ul>
+                </div>
+            </div>
+			<a id="msgboard-link" class="group-box" href="/msgboard/">留言板</a>
 		</div>
 	</div>
 	<div id="aside">
+        <div id="search-box">
+            <form id="searchform"action="#" method="GET">
+                <input id="search-bar" name="search-keyword" placeholder="搜索..." maxlength="10">
+                <input id="search-button" type="submit" value="搜索">
+            </form>
+        </div>
 		<div id="new-things">
-			<div class="aside-box">
-				<h4>新鲜事</h4>
-			</div>
+            <div class="aside-fresh-title"><h4>新鲜事</h4></div>
+			<div class="aside-fresh-box">
+                <div class="aside-article-type">
+                    <a target="_blank" href="#">JavaScript</a>
+                </div>
+                <div class="aside-article-title">
+                    <a target="_blank" href="#">破解极验验证码之模拟B站登录破解极验验证码之模拟B站登录</a>
+                </div>
+                <div class="aside-article-time">
+                   <p>2019-07-23 21:02</p>
+                </div>
+            </div>
+            <div class="aside-fresh-box">
+                <a class="aside-article-type" target="_blank" href="#">文章类型</a>
+                <a class="aside-article-title" target="_blank" href="#">文章标题</a>
+            </div>
+            <div class="aside-fresh-box">
+                <a class="aside-article-type" target="_blank" href="#">文章类型</a>
+                <a class="aside-article-title" target="_blank" href="#">文章标题</a>
+            </div>
+            <div class="aside-fresh-box">
+                <a class="aside-article-type" target="_blank" href="#">文章类型</a>
+                <a class="aside-article-title" target="_blank" href="#">文章标题</a>
+            </div>
+            <div class="aside-fresh-box">
+                <a class="aside-article-type" target="_blank" href="#">文章类型</a>
+                <a class="aside-article-title" target="_blank" href="#">文章标题</a>
+            </div>
 		</div>
 		<div id="recent-message">
 			<div class="aside-box">
-				<h4>最近留言</h4>
+                <h4>最近留言</h4>
                 {% for msg in msgs %}
                     {% if forloop.counter < 3 %}
                         <div class="aside-text-box">
@@ -45,11 +105,69 @@
 		</div>
 	</div>
 	<div id="content">
-		<div id="skill"></div>
+		<div id="skill">
+            <div class="article-list-box">
+                    <span class="article-list-type"><a href="https://www.baidu.com">JavaScript</a></span>
+                    <a href="https://www.baidu.com">破解极验验证码之模拟B站登录</a>
+                <div class="article-list-abstract">
+                        很多网站登录时都采用了极验验证码作为区分正常用户和爬虫程序的方法之一，
+                    B站正是其中的一个，只要掌握了破解的思路和方法，即使是面对不一样的网站也可以采用相似的方法进行破解。
+                    本文主要从破解思路来向大家分享破解的过程，最后后放上源码供大家参考和指正！
+                    本文主要从破解思路来向大家分享破解的过程，最后后放上源码供大家参考和指正！最后后放上源码供大家参考和指正！
+                </div>
+                <span class="article-list-time">2019-07-24 16:38</span>
+            </div>
+            <div class="article-list-box">
+                    <span class="article-list-type"><a href="https://www.baidu.com">JavaScript</a></span>
+                    <a href="https://www.baidu.com">破解极验验证码之模拟B站登录</a>
+                <div class="article-list-abstract">
+                        很多网站登录时都采用了极验验证码作为区分正常用户和爬虫程序的方法之一，
+                    B站正是其中的一个，只要掌握了破解的思路和方法，即使是面对不一样的网站也可以采用相似的方法进行破解。
+                    本文主要从破解思路来向大家分享破解的过程，最后后放上源码供大家参考和指正！
+                </div>
+                <span class="article-list-time">2019-07-24 16:38</span>
+            </div>
+            <div class="article-list-box">
+                    <span class="article-list-type"><a href="https://www.baidu.com">JavaScript</a></span>
+                    <a href="https://www.baidu.com">破解极验验证码之模拟B站登录</a>
+                <div class="article-list-abstract">
+                        很多网站登录时都采用了极验验证码作为区分正常用户和爬虫程序的方法之一，
+                    B站正是其中的一个，只要掌握了破解的思路和方法，即使是面对不一样的网站也可以采用相似的方法进行破解。
+                    本文主要从破解思路来向大家分享破解的过程，最后后放上源码供大家参考和指正！
+                </div>
+                <span class="article-list-time">2019-07-24 16:38</span>
+            </div>
+            <div class="article-list-box">
+                    <span class="article-list-type"><a href="https://www.baidu.com">JavaScript</a></span>
+                    <a href="https://www.baidu.com">破解极验验证码之模拟B站登录</a>
+                <div class="article-list-abstract">
+                        很多网站登录时都采用了极验验证码作为区分正常用户和爬虫程序的方法之一，
+                    B站正是其中的一个，只要掌握了破解的思路和方法，即使是面对不一样的网站也可以采用相似的方法进行破解。
+                    本文主要从破解思路来向大家分享破解的过程，最后后放上源码供大家参考和指正！
+                </div>
+                <span class="article-list-time">2019-07-24 16:38</span>
+            </div>
+            <div class="article-list-box">
+                    <span class="article-list-type"><a href="https://www.baidu.com">JavaScript</a></span>
+                    <a href="https://www.baidu.com">破解极验验证码之模拟B站登录</a>
+                <div class="article-list-abstract">
+                        很多网站登录时都采用了极验验证码作为区分正常用户和爬虫程序的方法之一，
+                    B站正是其中的一个，只要掌握了破解的思路和方法，即使是面对不一样的网站也可以采用相似的方法进行破解。
+                    本文主要从破解思路来向大家分享破解的过程，最后后放上源码供大家参考和指正！
+                </div>
+                <span class="article-list-time">2019-07-24 16:38</span>
+            </div>
+            <div class="page-box">
+                <a class="page-button pre-page" target="_blank" href="https://www.sougou.com">上一页</a>
+                <a class="page-button num-page" target="_blank" href="https://www.taobao.com">1</a>
+                <a class="page-button num-page" target="_blank" href="https://www.taobao.com">2</a>
+                <a class="page-button next-page" target="_blank" href="https://www.taobao.com">下一页</a>
+            </div>
+        </div>
 	</div>
-    <div id="footer">
-        <p>我也是有底线的</p>
-    </div>
+</div>
+<div id="footer">
+    <p>感谢浏览</p>
 </div>
 </body>
 </html>

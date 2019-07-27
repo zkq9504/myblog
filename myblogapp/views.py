@@ -9,6 +9,9 @@ def home(request):
 def skill(request):
     msgs = Msgboard.objects.order_by('-time')[0:3]
     return render(request, "skill.html", {"msgs": msgs})
+def skillArticle(request):
+    msgs = Msgboard.objects.order_by('-time')[0:3]
+    return render(request, "py001.html", {"msgs": msgs})
 
 def life(request):
     msgs = Msgboard.objects.order_by('-time')[0:3]
@@ -18,10 +21,10 @@ def food(request):
     msgs = Msgboard.objects.order_by('-time')[0:3]
     return render(request, "food.html", {"msgs": msgs})
 
-def message(request):
+def msgboard(request):
     if request.method == "GET":
         msgs = Msgboard.objects.order_by('-time')[0:5]
-        return render(request,"message.html",{"msgs":msgs})
+        return render(request,"msgboard.html",{"msgs":msgs})
     if request.method == "POST":
         msg = Msgboard()
         message = request.POST.get('newmsg')
@@ -29,4 +32,4 @@ def message(request):
         msg.time = time
         msg.message = message
         msg.save()
-        return redirect("/message/")
+        return redirect("/msgboard/")
