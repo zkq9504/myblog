@@ -112,12 +112,12 @@
 	
 	#aside{
 		width:300px;
-		color:white;
 		text-align:center;
 		float:left;
 
 	}
 	#search-box{
+		display:none;
 		height:40px;
 		background-color:#9FB6CD;
 		margin:0 5px 5px 5px;
@@ -159,7 +159,7 @@
 	}
 	.aside-article-type{
 		position:relative;
-		width:100px;
+		width:50px;
 		height:20px;
 		line-height:20px;
 		top:5px;
@@ -196,9 +196,9 @@
 	}
 	.aside-text-box{
 		font-size:16px;
-		color:white;
 		width:240px;
 		height:200px;
+		color:white;
 		border:1px solid lightsteelblue;
 		margin:15px auto;
 	}
@@ -268,38 +268,38 @@
 		float:right;
 		position:relative;
 		top:5px;
-		border:1px solid red;
 	}
-	.page-box{
+	#page-box{
 		width:800px;
 		height:40px;
 		font-size:14px;
 		line-height:40px;
 		text-align:center;
 		letter-spacing:2px;
-		margin:50px auto;
+		margin:0 auto;
+		position:absolute;
+		top:1470px;
 	}
-	.page-button{
+	.pagination{
+		list-style-type:none;
+	}
+	.page{
+		border:1px solid lightsteelblue;
 		color:black;
-		padding:2px;
-		background-color:gainsboro;
-		border:1px solid black;
+		background-color:white;
+		padding: 1px 5px;
 	}
-	.num-page{
-		padding-left:7px;
-		padding-right:7px;
-	}
-	.page-button:hover{
+
+	#pre-page:hover{
 		color:firebrick;
 	}
-	.page-button:focus{
-		font-size:90%;
-		background-color:#9FB6CD;
+	#next-page:hover{
+		color:firebrick;
 	}
 
 	#home{
 		width:890px;
-		height:1010px;
+		height:1185px;
 		background-color:#CCCCCC;
 	}
 	#cube-box{
@@ -407,24 +407,24 @@
 
 	#life{
 		width:890px;
-		height:1010px;
+		height:1185px;
 		background-color:#FFFFE0;
 	}
 	
 	#food{
 		width:890px;
-		height:1010px;
+		height:1185px;
 		background-color:#FFE4B5;
 	}
 	
-	#message{
+	#msgboard{
 		width:890px;
-		height:1010px;
+		height:1185px;
 		background-color:#C1CDC1;
 	}
 	#msg-board{
 		width:600px;
-		height:800px;
+		height:980px;
 		font-family:楷体;
 		background-color:whitesmoke;
 		color:black;

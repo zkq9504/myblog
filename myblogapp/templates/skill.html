@@ -32,7 +32,7 @@
                 <div id="life-list" class="sort-list">
                     <ul>
                         <li><a href="/life/essay/">个人随笔</a></li>
-                        <li><a href="/life/phtoo/">随手拍</a></li>
+                        <li><a href="/life/photo/">随手拍</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,33 +57,19 @@
         </div>
 		<div id="new-things">
             <div class="aside-fresh-title"><h4>新鲜事</h4></div>
+            {% for newarticle in newarticles %}
 			<div class="aside-fresh-box">
                 <div class="aside-article-type">
-                    <a target="_blank" href="#">JavaScript</a>
+                    {{ newarticle.type }}
                 </div>
                 <div class="aside-article-title">
-                    <a target="_blank" href="#">破解极验验证码之模拟B站登录破解极验验证码之模拟B站登录</a>
+                    <a target="_blank" href="{{ newarticle.href }}">标题:{{ newarticle.title }}</a>
                 </div>
                 <div class="aside-article-time">
-                   <p>2019-07-23 21:02</p>
+                   <p>{{ newarticle.time|date:"Y-m-d H:i" }}</p>
                 </div>
             </div>
-            <div class="aside-fresh-box">
-                <a class="aside-article-type" target="_blank" href="#">文章类型</a>
-                <a class="aside-article-title" target="_blank" href="#">文章标题</a>
-            </div>
-            <div class="aside-fresh-box">
-                <a class="aside-article-type" target="_blank" href="#">文章类型</a>
-                <a class="aside-article-title" target="_blank" href="#">文章标题</a>
-            </div>
-            <div class="aside-fresh-box">
-                <a class="aside-article-type" target="_blank" href="#">文章类型</a>
-                <a class="aside-article-title" target="_blank" href="#">文章标题</a>
-            </div>
-            <div class="aside-fresh-box">
-                <a class="aside-article-type" target="_blank" href="#">文章类型</a>
-                <a class="aside-article-title" target="_blank" href="#">文章标题</a>
-            </div>
+            {% endfor %}
 		</div>
 		<div id="recent-message">
 			<div class="aside-box">
@@ -107,17 +93,31 @@
 		<div id="skill">
             {% for article in articles %}
                 <div class="article-list-box">
-                        <span class="article-list-type"><a href="/skill/{{ article.type }}/" >{{ article.type }}</a></span>
-                        <a href={{ article.href }}>{{ article.title }}</a>
-                    <div class="article-list-abstract">{{ article.abstract }}</div>
+                        <span class="article-list-type">
+                            <a href="/skill/{{ article.type }}/" >{{ article.type }}</a>
+                        </span>
+                        <a target="_blank" href={{ article.href }}>{{ article.title }}</a>
+                    <div class="article-list-abstract">摘要：{{ article.abstract }}</div>
                     <span class="article-list-time">{{ article.time|date:"Y-m-d H:i" }}</span>
                 </div>
             {% endfor %}
-            <div class="page-box">
-                <a class="page-button pre-page" target="_blank" href="https://www.sougou.com">上一页</a>
-                <a class="page-button num-page" target="_blank" href="https://www.taobao.com">1</a>
-                <a class="page-button num-page" target="_blank" href="https://www.taobao.com">2</a>
-                <a class="page-button next-page" target="_blank" href="https://www.taobao.com">下一页</a>
+            <div id="page-box">
+                <nav>
+                    <ul class="pagination">
+                        <li class="step-links">
+                        {% if articles.has_previous %}
+                            <a id="pre-page" class="page" href="?page={{ articles.previous_page_number }}">上一页</a>
+                        {% endif %}
+
+                        <span id="current-page" class="page">
+                            Page {{ articles.number }} of {{ articles.paginator.num_pages }}</span>
+
+                        {% if articles.has_next %}
+                            <a id="next-page" class="page" href="?page={{ articles.next_page_number }}">下一页</a>
+                        {% endif %}
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
 	</div>

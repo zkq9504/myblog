@@ -39,6 +39,7 @@ class Msgboard(models.Model):
         db_table = "msgboard"
 
 class Comments(models.Model):
+    file_name = models.CharField(max_length=50)
     time = models.DateTimeField()
     text = models.CharField(max_length=250)
 

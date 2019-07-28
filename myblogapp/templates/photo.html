@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-	<link rel="stylesheet" href="../static/css/home.css">
-	<title>周凯强的个人博客</title>
+    <title>周凯强的个人博客</title>
+	<link rel="stylesheet" href="/../static/css/home.css">
 </head>
 <body>
 <div id="container">
@@ -90,44 +90,40 @@
 		</div>
 	</div>
 	<div id="content">
-		<div id="msgboard">
-            <div id="msg-board">
-                <div id="msg-header">
-                    <span>留言墙</span>
+		<div id="life">
+            {% for article in articles %}
+                <div class="article-list-box">
+                        <span class="article-list-type">
+                            <a href="/life/{{ article.type }}/" >{{ article.type }}</a>
+                        </span>
+                        <a target="_blank" href={{ article.href }}>{{ article.title }}</a>
+                    <div class="article-list-abstract">摘要：{{ article.abstract }}</div>
+                    <span class="article-list-time">{{ article.time|date:"Y-m-d H:i" }}</span>
                 </div>
-                <div id="new-msg-box">
-                    <form id="msgform"action="/msgboard/" method="POST">
-                        {% csrf_token %}
-                        <textarea id="new-msg-area" wrap="physical" name="newmsg" placeholder="说点什么吧..." maxlength="100"></textarea><br />
-                        <input type="button" id="submit-msg" onclick="checkText()" value="提 交">
-                    </form>
-                </div>
-                <div id="msg-box">
-                    {% for msg in msgs %}
-                        <div class="msg-text-box">
-                            <div class="msg-text"><p>&nbsp{{ msg.message }}</p></div>
-                            <div class="msg-time"><p>{{ msg.time|date:"Y-m-d H:i:s" }}</p></div>
-                        </div>
-                    {% endfor %}
-                </div>
+            {% endfor %}
+            <div id="page-box">
+                <nav>
+                    <ul class="pagination">
+                        <li class="step-links">
+                        {% if articles.has_previous %}
+                            <a id="pre-page" class="page" href="?page={{ articles.previous_page_number }}">上一页</a>
+                        {% endif %}
+
+                        <span id="current-page" class="page">
+                            Page {{ articles.number }} of {{ articles.paginator.num_pages }}</span>
+
+                        {% if articles.has_next %}
+                            <a id="next-page" class="page" href="?page={{ articles.next_page_number }}">下一页</a>
+                        {% endif %}
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
 	</div>
-    <div id="footer">
-        <p>我也是有底线的</p>
-    </div>
 </div>
-<script type="text/javascript">
-    function checkText() {
-        var msgform = document.getElementById("msgform")
-        var textarea = document.getElementById("new-msg-area")
-        if (textarea.value == ""){
-            alert("留言为空!")
-        }
-        else{
-            msgform.submit()
-        }
-    }
-</script>
+<div id="footer">
+    <p>感谢浏览</p>
+</div>
 </body>
 </html>
