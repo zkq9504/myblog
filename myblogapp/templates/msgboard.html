@@ -78,7 +78,7 @@
                     {% if forloop.counter < 3 %}
                         <div class="aside-text-box">
                             <div class="aside-text">
-                                <p>&nbsp&nbsp{{msg.message}}</p>
+                                <p>&nbsp&nbsp{{msg.text}}</p>
                             </div>
                             <div class="aside-msg-time">
                                 {{ msg.time|date:"Y-m-d H:i:s" }}
@@ -105,7 +105,7 @@
                 <div id="msg-box">
                     {% for msg in msgs %}
                         <div class="msg-text-box">
-                            <div class="msg-text"><p>&nbsp{{ msg.message }}</p></div>
+                            <div class="msg-text"><p>&nbsp{{ msg.text }}</p></div>
                             <div class="msg-time"><p>{{ msg.time|date:"Y-m-d H:i:s" }}</p></div>
                         </div>
                     {% endfor %}
