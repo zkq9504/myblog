@@ -60,10 +60,10 @@
             {% for newarticle in newarticles %}
 			<div class="aside-fresh-box">
                 <div class="aside-article-type">
-                    {{ newarticle.type }}
+                    <a href="{% url 'tag' newarticle.sort newarticle.tag %}">{{ newarticle.tag }}</a>
                 </div>
                 <div class="aside-article-title">
-                    <a target="_blank" href="{{ newarticle.href }}">标题:{{ newarticle.title }}</a>
+                    <a target="_blank" href="{% url 'article' newarticle.sort newarticle.tag newarticle.name %}">标题:{{ newarticle.title }}</a>
                 </div>
                 <div class="aside-article-time">
                    <p>{{ newarticle.time|date:"Y-m-d H:i" }}</p>
@@ -78,7 +78,7 @@
                     {% if forloop.counter < 3 %}
                         <div class="aside-text-box">
                             <div class="aside-text">
-                                <p>&nbsp&nbsp{{msg.text}}</p>
+                                <p>&nbsp&nbsp{{msg.content}}</p>
                             </div>
                             <div class="aside-msg-time">
                                 {{ msg.time|date:"Y-m-d H:i:s" }}
@@ -105,16 +105,34 @@
                 <div id="msg-box">
                     {% for msg in msgs %}
                         <div class="msg-text-box">
-                            <div class="msg-text"><p>&nbsp{{ msg.text }}</p></div>
+                            <div class="msg-text"><p>&nbsp{{ msg.content }}</p></div>
                             <div class="msg-time"><p>{{ msg.time|date:"Y-m-d H:i:s" }}</p></div>
                         </div>
                     {% endfor %}
                 </div>
+                <div id="msgboard-page-box">
+                <nav>
+                    <ul class="pagination">
+                        <li class="step-links">
+                        {% if msgs.has_previous %}
+                            <a class="pre-page page" href="?page={{ msgs.previous_page_number }}">上一页</a>
+                        {% endif %}
+
+                        <span class="current-page page">
+                            Page {{ msgs.number }} of {{ msgs.paginator.num_pages }}</span>
+
+                        {% if msgs.has_next %}
+                            <a class="next-page page" href="?page={{ msgs.next_page_number }}">下一页</a>
+                        {% endif %}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             </div>
         </div>
 	</div>
     <div id="footer">
-        <p>我也是有底线的</p>
+        <p>感谢浏览</p>
     </div>
 </div>
 <script type="text/javascript">

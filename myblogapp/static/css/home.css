@@ -233,6 +233,12 @@
 		margin-left:5px;
 		float:right;
 	}
+	#article-list{
+		width:890px;
+		height:1185px;
+		background-color:#c4dce8;
+		/*background-color:#ADD8E6;*/
+	}
 	.article-list-box{
 		position:relative;
 		top:20px;
@@ -269,7 +275,7 @@
 		position:relative;
 		top:5px;
 	}
-	#page-box{
+	#article-page-box{
 		width:800px;
 		height:40px;
 		font-size:14px;
@@ -279,6 +285,18 @@
 		margin:0 auto;
 		position:absolute;
 		top:1470px;
+	}
+	#msgboard-page-box{
+		width:600px;
+		height:40px;
+		font-family: Arial;
+		font-size:14px;
+		line-height:40px;
+		text-align:center;
+		letter-spacing:2px;
+		margin:0 auto;
+		position:absolute;
+		top:910px;
 	}
 	.pagination{
 		list-style-type:none;
@@ -290,10 +308,10 @@
 		padding: 1px 5px;
 	}
 
-	#pre-page:hover{
+	.pre-page:hover{
 		color:firebrick;
 	}
-	#next-page:hover{
+	.next-page:hover{
 		color:firebrick;
 	}
 
@@ -398,25 +416,8 @@
 				background-size: 300px 300px;
 			}
 		}
-	
-	#skill{
-		width:890px;
-		height:1185px;
-		background-color:#ADD8E6;
-	}
 
-	#life{
-		width:890px;
-		height:1185px;
-		background-color:#FFFFE0;
-	}
-	
-	#food{
-		width:890px;
-		height:1185px;
-		background-color:#FFE4B5;
-	}
-	
+
 	#msgboard{
 		width:890px;
 		height:1185px;

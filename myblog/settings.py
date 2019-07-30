@@ -58,10 +58,7 @@ ROOT_URLCONF = 'myblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'myblogapp/templates/skill/'),
-                 os.path.join(BASE_DIR, 'myblogapp/templates/life/'),
-                 os.path.join(BASE_DIR, 'myblogapp/templates/food/'),
-                 ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,7 +119,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -142,4 +139,3 @@ django_heroku.settings(locals())
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-FIXTURE_DIRS = (os.path.join(BASE_DIR,'myblogapp/fixtures/',),)

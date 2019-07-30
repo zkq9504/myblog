@@ -18,6 +18,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', include('myblogapp.urls')),
 ]
 

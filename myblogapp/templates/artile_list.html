@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>周凯强的个人博客</title>
-	<link rel="stylesheet" href="../static/css/home.css">
+	<link rel="stylesheet" href="/../static/css/home.css">
 </head>
 <body>
 <div id="container">
@@ -60,10 +60,10 @@
             {% for newarticle in newarticles %}
 			<div class="aside-fresh-box">
                 <div class="aside-article-type">
-                    {{ newarticle.type }}
+                    <a href="{% url 'tag' newarticle.sort newarticle.tag %}">{{ newarticle.tag }}</a>
                 </div>
                 <div class="aside-article-title">
-                    <a target="_blank" href="{{ newarticle.href }}">标题:{{ newarticle.title }}</a>
+                    <a target="_blank" href="{% url 'article' newarticle.sort newarticle.tag newarticle.name %}">标题:{{ newarticle.title }}</a>
                 </div>
                 <div class="aside-article-time">
                    <p>{{ newarticle.time|date:"Y-m-d H:i" }}</p>
@@ -78,7 +78,7 @@
                     {% if forloop.counter < 3 %}
                         <div class="aside-text-box">
                             <div class="aside-text">
-                                <p>&nbsp&nbsp{{msg.text}}</p>
+                                <p>&nbsp&nbsp{{msg.content}}</p>
                             </div>
                             <div class="aside-msg-time">
                                 {{ msg.time|date:"Y-m-d H:i:s" }}
@@ -90,30 +90,30 @@
 		</div>
 	</div>
 	<div id="content">
-		<div id="life">
+		<div id="article-list">
             {% for article in articles %}
                 <div class="article-list-box">
                         <span class="article-list-type">
-                            <a href="/life/{{ article.type }}/" >{{ article.type }}</a>
+                            <a href="{% url "tag" article.sort article.tag %}" >{{ article.tag }}</a>
                         </span>
-                        <a target="_blank" href={{ article.href }}>{{ article.title }}</a>
+                        <a target="_blank" href="{% url 'article' article.sort article.tag article.name %}">{{ article.title }}</a>
                     <div class="article-list-abstract">摘要：{{ article.abstract }}</div>
                     <span class="article-list-time">{{ article.time|date:"Y-m-d H:i" }}</span>
                 </div>
             {% endfor %}
-            <div id="page-box">
+            <div id="article-page-box">
                 <nav>
                     <ul class="pagination">
                         <li class="step-links">
                         {% if articles.has_previous %}
-                            <a id="pre-page" class="page" href="?page={{ articles.previous_page_number }}">上一页</a>
+                            <a class="pre-page page" href="?page={{ articles.previous_page_number }}">上一页</a>
                         {% endif %}
 
-                        <span id="current-page" class="page">
+                        <span class="current-page page">
                             Page {{ articles.number }} of {{ articles.paginator.num_pages }}</span>
 
                         {% if articles.has_next %}
-                            <a id="next-page" class="page" href="?page={{ articles.next_page_number }}">下一页</a>
+                            <a class="next-page page" href="?page={{ articles.next_page_number }}">下一页</a>
                         {% endif %}
                         </li>
                     </ul>

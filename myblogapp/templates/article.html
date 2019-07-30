@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>周凯强的个人博客</title>
-	<link rel="stylesheet" href="/../static/css/home.css">
+	<link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/article.css">
 </head>
 <body>
 <div id="container">
@@ -48,10 +49,10 @@
 			<a id="msgboard-link" class="group-box" href="/msgboard/">留言板</a>
 		</div>
 	</div>
-	<div id="aside">
+    <div id="aside">
         <div id="search-box">
             <form id="searchform"action="/search/" method="GET">
-                <input id="search-bar" name="search-keyword" placeholder="搜索..." maxlength="10">
+                <input id="search-bar" name="search" placeholder="搜索..." maxlength="10">
                 <input id="search-button" type="submit" value="搜索">
             </form>
         </div>
@@ -60,10 +61,10 @@
             {% for newarticle in newarticles %}
 			<div class="aside-fresh-box">
                 <div class="aside-article-type">
-                    {{ newarticle.type }}
+                    <a href="{% url 'tag' newarticle.sort newarticle.tag %}">{{ newarticle.tag }}</a>
                 </div>
                 <div class="aside-article-title">
-                    <a target="_blank" href="{{ newarticle.href }}">标题:{{ newarticle.title }}</a>
+                    <a target="_blank" href="{% url 'article' newarticle.sort newarticle.tag newarticle.name %}">标题:{{ newarticle.title }}</a>
                 </div>
                 <div class="aside-article-time">
                    <p>{{ newarticle.time|date:"Y-m-d H:i" }}</p>
@@ -78,7 +79,7 @@
                     {% if forloop.counter < 3 %}
                         <div class="aside-text-box">
                             <div class="aside-text">
-                                <p>&nbsp&nbsp{{msg.text}}</p>
+                                <p>&nbsp&nbsp{{msg.content}}</p>
                             </div>
                             <div class="aside-msg-time">
                                 {{ msg.time|date:"Y-m-d H:i:s" }}
@@ -88,42 +89,71 @@
                 {% endfor %}
 			</div>
 		</div>
-	</div>
-	<div id="content">
-		<div id="food">
-            {% for article in articles %}
-                <div class="article-list-box">
-                        <span class="article-list-type">
-                            <a href="/food/{{ article.type }}/" >{{ article.type }}</a>
-                        </span>
-                        <a target="_blank" href={{ article.href }}>{{ article.title }}</a>
-                    <div class="article-list-abstract">摘要：{{ article.abstract }}</div>
-                    <span class="article-list-time">{{ article.time|date:"Y-m-d H:i" }}</span>
-                </div>
-            {% endfor %}
-            <div id="page-box">
-                <nav>
-                    <ul class="pagination">
-                        <li class="step-links">
-                        {% if articles.has_previous %}
-                            <a id="pre-page" class="page" href="?page={{ articles.previous_page_number }}">上一页</a>
-                        {% endif %}
-
-                        <span id="current-page" class="page">
-                            Page {{ articles.number }} of {{ articles.paginator.num_pages }}</span>
-
-                        {% if articles.has_next %}
-                            <a id="next-page" class="page" href="?page={{ articles.next_page_number }}">下一页</a>
-                        {% endif %}
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+        <div id="ad-position">
+            广告招租
         </div>
 	</div>
+    <div id="content">
+        <div id="article-area">
+            <div class="article-title">
+                <h4>{{ article.title }}</h4>
+            </div>
+            <div class="article-msg">
+                <span class="article-sort">{{ article.sort }}</span>
+                <span class="article-sort-type">{{ article.tag }}</span>
+                <span class="article-time">{{ article.time|date:"Y-m-d H:i" }}</span>
+            </div>
+            <div class="article-abstract">
+                <span style="font-weight:bold;">摘要:</span>
+                <span class="article-abstract-text">
+                    <p>{{ article.abstract }}</p>
+                </span>
+            </div>
+            <div class="article-content">
+                <span style="font-weight:bold">正文:</span><br />
+                <p>{{ article.content }}</p>
+                <div class="blank-place" style="height:40px;"></div>
+            </div>
+        </div>
+        <div id="comment-area">
+            <div id="new-comment">
+                <br /><span>发表我的评论</span>
+                {% if article %}
+                <form id="comment-form"action="{% url 'article' article.sort article.tag article.name %}" method="POST">
+                    {% csrf_token %}
+                    <textarea id="new-comment-area" wrap="physical" name="new_comment" placeholder="说点什么吧..." maxlength="128"></textarea><br />
+                    <input type="button" id="submit-comment" onclick="checkComment()" value="发表评论">
+                </form>
+                {% endif %}
+            </div>
+            <div id="pre-comments">
+                {% for comment in comments %}
+                    <div class="comment-text-box">
+                        <div class="comment-text">
+                            <p>{{ comment.content }}</p>
+                        </div>
+                        <div class="comment-time"><p>{{ comment.time|date:"Y-m-d H:i:s" }}</p></div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="blank-place" style="height:340px"></div>
+        </div>
+    </div>
 </div>
 <div id="footer">
     <p>感谢浏览</p>
 </div>
+<script type="text/javascript">
+    function checkComment() {
+        var commentform = document.getElementById("comment-form")
+        var textarea = document.getElementById("new-comment-area")
+        if (textarea.value == ""){
+            alert("评论为空！")
+        }
+        else{
+            commentform.submit()
+        }
+    }
+</script>
 </body>
-</html>
+<html/>
