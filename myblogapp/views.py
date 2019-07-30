@@ -64,10 +64,11 @@ def article(request,sort,tag,name):
 
 def paging(request,content_list,page_num):
     """
-    对从数据库获取的列表进行分页
-    :param request: http请求
-    :param content_list: 从数据库获取的列表
-    :return: 当前请求页的列表
+    分页
+    :param request:http请求
+    :param content_list: 需要分页的列表
+    :param page_num: 每页个数
+    :return:
     """
     paginator = Paginator(content_list, page_num)
     if request.method == "GET":
