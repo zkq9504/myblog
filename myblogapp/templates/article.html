@@ -5,6 +5,7 @@
     <title>周凯强的个人博客</title>
 	<link rel="stylesheet" href="/static/css/home.css">
     <link rel="stylesheet" href="/static/css/article.css">
+    <link rel="stylesheet" href="/static/css/code.css">
 </head>
 <body>
 <div id="container">
@@ -52,7 +53,7 @@
     <div id="aside">
         <div id="search-box">
             <form id="searchform"action="/search/" method="GET">
-                <input id="search-bar" name="search" placeholder="搜索..." maxlength="10">
+                <input id="search-bar" name="keyword" placeholder="文章标题关键字搜索..." maxlength="10">
                 <input id="search-button" type="submit" value="搜索">
             </form>
         </div>
@@ -103,15 +104,8 @@
                 <span class="article-sort-type">{{ article.tag }}</span>
                 <span class="article-time">{{ article.time|date:"Y-m-d H:i" }}</span>
             </div>
-            <div class="article-abstract">
-                <span style="font-weight:bold;">摘要:</span>
-                <span class="article-abstract-text">
-                    <p>{{ article.abstract }}</p>
-                </span>
-            </div>
             <div class="article-content">
-                <span style="font-weight:bold">正文:</span><br />
-                <p>{{ article.content }}</p>
+                {{ article.content|safe }}
                 <div class="blank-place" style="height:60px;"></div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 from django.db import models
-
+from mdeditor.fields import MDTextField
 
 # 所有文章基本信息表
 class Article(models.Model):
@@ -8,8 +8,11 @@ class Article(models.Model):
     name = models.CharField('文章名',max_length=50,help_text="tag + articleNum")
     title = models.CharField('标题',max_length=30)
     abstract = models.CharField('摘要',max_length=250)
-    content = models.TextField('内容')
+    content = MDTextField()
     time = models.DateTimeField('发布时间')
+
+    def __str__(self):
+        return self.name
 
     class Meta():
         db_table = "article"

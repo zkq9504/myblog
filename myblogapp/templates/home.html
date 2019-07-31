@@ -50,8 +50,9 @@
 	</div>
 	<div id="aside">
         <div id="search-box">
-            <form id="searchform"action="/search/" method="GET">
-                <input id="search-bar" name="search-keyword" placeholder="搜索..." maxlength="10">
+            <form id="searchform"action="/search/" method="POST">
+                {% csrf_token %}
+                <input id="search-bar" name="keyword" placeholder="文章标题关键字搜索..." maxlength="20">
                 <input id="search-button" type="submit" value="搜索">
             </form>
         </div>

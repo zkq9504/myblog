@@ -3,6 +3,7 @@ from django.http import HttpResponse,Http404
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage, InvalidPage
 from myblogapp.models import Article,Comment,Msg
 from datetime import datetime
+import markdown
 
 
 def home(request):
@@ -51,6 +52,11 @@ def msgboard(request):
 def article(request,sort,tag,name):
     """文章视图函数"""
     article = get_object_or_404(Article, sort=sort, tag=tag, name=name)
+    article.content = markdown.markdown(article.content.replace("\r\n", '  \n'), extensions=[
+        'markdown.extensions.extra',
+        'markdown.extensions.codehilite',
+        'markdown.extensions.toc',
+    ])
     if request.method == "GET":
         comments = Comment.objects.filter(article=article).order_by('-time')
         msgs = Msg.objects.order_by('-time')[:3]

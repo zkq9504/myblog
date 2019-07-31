@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n&@s%_3$u^%-2jz(@tx4y#fc^w_yh1w_gl3i88@)_#zmxi_=8x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mdeditor',
     'myblogapp',
 ]
 
@@ -131,6 +132,10 @@ STATICFILES_DIRS = [
     ('css',os.path.join(STATIC_ROOT,'css')),
     ('images',os.path.join(STATIC_ROOT,'images')),
     ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'uploads') # 文章静态文件
+MEDIA_URL = '/media/'
+
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
