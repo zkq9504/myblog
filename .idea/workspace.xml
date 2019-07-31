@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ea90bbb-57e3-424e-8488-ba4b85057699" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblogapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblogapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myblogapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblogapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,8 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myblogapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            <state relative-caret-position="301">
+              <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
               <folding>
                 <element signature="e#0#78#0" expanded="true" />
               </folding>
@@ -187,7 +184,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="724" />
     <option name="width" value="1203" />
     <option name="height" value="1047" />
@@ -431,12 +428,12 @@
       <workItem from="1564488553392" duration="23763000" />
       <workItem from="1564558465930" duration="38000" />
       <workItem from="1564562843336" duration="4000" />
-      <workItem from="1564579464318" duration="2071000" />
+      <workItem from="1564579464318" duration="2746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219835000" />
+    <option name="totallyTimeSpent" value="220510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="724" y="0" width="1203" height="1047" extended-state="0" />
@@ -616,8 +613,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myblogapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="301">
+          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
           <folding>
             <element signature="e#0#78#0" expanded="true" />
           </folding>

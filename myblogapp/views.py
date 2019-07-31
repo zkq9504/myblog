@@ -13,10 +13,8 @@ def home(request):
 
 def sort(request,sort):
     """类别页视图函数"""
-    print("sort:",sort)
-    try:
-        articles = Article.objects.filter(sort=sort).order_by('-time')
-    except Article.DoesNotExist:
+    articles = Article.objects.filter(sort=sort).order_by('-time')
+    if not articles:
         raise Http404("未找到对应的文章")
     msgs = Msg.objects.order_by('-time')[:3]
     newarticles = Article.objects.order_by('-time')[:5]
@@ -25,9 +23,8 @@ def sort(request,sort):
 
 def tag(request,sort,tag):
     """标签页视图函数"""
-    try:
-        articles = Article.objects.filter(sort=sort,tag=tag).order_by('-time')
-    except Article.DoesNotExist:
+    articles = Article.objects.filter(sort=sort,tag=tag).order_by('-time')
+    if not articles:
         raise Http404("未找到对应的文章")
     msgs = Msg.objects.order_by('-time')[:3]
     newarticles = Article.objects.order_by('-time')[:5]
