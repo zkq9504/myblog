@@ -3,9 +3,9 @@ from django.db import models
 
 # 所有文章基本信息表
 class Article(models.Model):
-    sort = models.CharField('类别',max_length=10)
-    tag = models.CharField('标签',max_length=10)
-    name = models.CharField('文章名',max_length=50)
+    sort = models.CharField('类别',max_length=10,help_text="skill or life or food")
+    tag = models.CharField('标签',max_length=10,help_text="python/django/vue/html/css/js/essay/photo/teaching/share")
+    name = models.CharField('文章名',max_length=50,help_text="tag + articleNum")
     title = models.CharField('标题',max_length=30)
     abstract = models.CharField('摘要',max_length=250)
     content = models.TextField('内容')

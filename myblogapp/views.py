@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_list_or_404,get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse,Http404
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage, InvalidPage
 from myblogapp.models import Article,Comment,Msg
 from datetime import datetime
@@ -14,7 +14,10 @@ def home(request):
 def sort(request,sort):
     """类别页视图函数"""
     print("sort:",sort)
-    articles = get_list_or_404(Article,sort=sort)
+    try:
+        articles = Article.objects.filter(sort=sort).order_by('-time')
+    except Article.DoesNotExist:
+        raise Http404("未找到对应的文章")
     msgs = Msg.objects.order_by('-time')[:3]
     newarticles = Article.objects.order_by('-time')[:5]
     articles = paging(request,articles,5)
@@ -22,7 +25,10 @@ def sort(request,sort):
 
 def tag(request,sort,tag):
     """标签页视图函数"""
-    articles = get_list_or_404(Article,sort=sort,tag=tag)
+    try:
+        articles = Article.objects.filter(sort=sort,tag=tag).order_by('-time')
+    except Article.DoesNotExist:
+        raise Http404("未找到对应的文章")
     msgs = Msg.objects.order_by('-time')[:3]
     newarticles = Article.objects.order_by('-time')[:5]
     articles = paging(request,articles,5)
